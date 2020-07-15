@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "./Input";
+import { connect } from "react-redux";
 
 function LandingPage() {
   return (
@@ -12,4 +13,8 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+const mapStateToProps = (state) => {
+  console.log(state);
+};
+
+export default connect(mapStateToProps)(LandingPage);

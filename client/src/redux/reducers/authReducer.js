@@ -1,24 +1,23 @@
-//import action-types
-import {
-  SIGNUP_SUCCESS,
-  SIGNUP_ERROR,
-  SIGNIN_SUCCESS,
-  SIGNIN_ERROR,
-  SIGNOUT_SUCCESS,
-  SIGNOUT_ERROR,
-} from "../constants";
-
 const authReducer = (state = {}, action) => {
   switch (action.type) {
-    case SIGNUP_SUCCESS:
-      return { ...state, register: action.payload };
-    case SIGNIN_SUCCESS:
-      return { ...state, login: action.payload };
-    case SIGNOUT_SUCCESS:
-      return { ...state, singout: action.payload };
-
+    case "SIGN_IN":
+      alert("Welcome back");
+      return state;
+    case "SIGN_IN_ERR":
+      alert("Sign in error...");
+      return state;
+    case "SIGN_OUT":
+      alert("You signed out..");
+      return state;
+    case "SIGN_UP":
+      alert("Welcome..");
+      return state;
+    case "SIGN_UP_ERR":
+      alert("Sign up error...");
+      return state;
     default:
-      break;
+      return state;
   }
 };
+
 export default authReducer;

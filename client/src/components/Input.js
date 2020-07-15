@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signup } from "../redux/actions/auth";
+import { connect } from "react-redux";
 
 function Input(props) {
   const dispatch = useDispatch();
@@ -14,11 +15,8 @@ function Input(props) {
       Email,
       Password,
     };
-    dispatch(
-      signup(datatosubmit).then((response) => {
-        console.log(response);
-      })
-    );
+    console.log(datatosubmit);
+    props.signup(datatosubmit);
   };
 
   return (
@@ -46,4 +44,10 @@ function Input(props) {
   );
 }
 
-export default Input;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signup: (creds) => dispatch(signup(creds)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Input);
