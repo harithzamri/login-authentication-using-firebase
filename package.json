@@ -1,0 +1,19 @@
+{
+  "name": "loginreactreduxfirebase",
+  "version": "1.0.0",
+  "description": "login authentication using redux firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "harith",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^7.16.0",
+    "react-redux": "^7.2.0",
+    "react-redux-firebase": "^3.6.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}
