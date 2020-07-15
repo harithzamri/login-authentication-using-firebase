@@ -8,25 +8,17 @@ import {
   SIGNOUT_ERROR,
 } from "../constants";
 
-//initialize state
-const INITIAL_STATE = {
-  authMsg: "",
-};
-//reducer
-const authReducer = (state = INITIAL_STATE, action) => {
-  //write conditional to handle action-response
-  if (action.type === SIGNIN_SUCCESS || action.type === SIGNOUT_SUCCESS) {
-    return { ...state, authMsg: "" };
-  } else if (
-    action.type === SIGNUP_SUCCESS ||
-    action.type === SIGNUP_ERROR ||
-    action.type === SIGNIN_ERROR ||
-    action.type === SIGNOUT_ERROR
-  ) {
-    return { ...state, authMsg: action.payload };
-  } else {
-    return state;
+const authReducer = (state = {}, action) => {
+  switch (action.type) {
+    case SIGNUP_SUCCESS:
+      return { ...state, register: action.payload };
+    case SIGNIN_SUCCESS:
+      return { ...state, login: action.payload };
+    case SIGNOUT_SUCCESS:
+      return { ...state, singout: action.payload };
+
+    default:
+      break;
   }
 };
-
 export default authReducer;
